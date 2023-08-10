@@ -32,28 +32,7 @@ while True:
                         cv2.puttext(
                             img,entries['name'],(30,30),
                             cv2.FONT_HERSHEY_COMPLEX,1.5,(0,0,255)
-                        )
-        ######------------   if entries ['name']== 'ayush'
-             ##   enc.append(face_encoding[0].tolist())
-                
-                # print(face_encoding)
-                # enc.append(face_encoding[0])
-             #   names.append(name)
-              #  frameCount += 1
-               # cv2.putText(
-                #    img,str(frameCount),(30,30),
-              #      cv2.FONT_HERSHEY_COMPLEX, 1.5,(0,0,255),5
-              #  )
-             #   if frameCount == frameLimit:
-              #     try:
-               #         old_data=pd.read_csv('face_data.csv',index_col=0,sep='|')
-                #   except Exception as r:
-                 #      print(e)
-                  # else:
-                   #    enc_old = old_data['encoding'].value.tlist()
-                    #   name_old = old_data['encoding'].value.tlist()
-                     #  enc=enc_old+enc
-                     # name = name_old+name                             
+                        )     
         for x,y,w,h in faces:
             cv2.rectangle(img,pt1=(x,y),pt2=(x+w,y+h),color=(0,0,255),thickness=8)
         
@@ -64,8 +43,6 @@ while True:
     else:
         print("No frame")
         break
-# data={'names':names,'encoding':enc}
-# pd.DataFrame(data).to_csv('face_data.csv',sep='|')
 cv2.destroyAllWindows()
 cv2.waitKey(1)
 vid.release()
